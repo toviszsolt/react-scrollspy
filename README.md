@@ -1,6 +1,6 @@
 # React Scrollspy Component
 
-**react-scrollspy-animated** is a React Component, that automatically update navigation components based on scroll position to indicate which link is currently active in the viewport. It also scrolls (animated) to viewport when click on a navigation component.
+**react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click on a navigation component.
 
 **[Demo with example code](https://mvzn2.csb.app/)**
 
@@ -9,13 +9,13 @@
 Install via NPM package manager
 
 ```
-npm i react-scrollspy-animated
+npm i react-scrollspy-navigation
 ```
 
 Install via Yarn package manager
 
 ```
-yarn add react-scrollspy-animated
+yarn add react-scrollspy-navigation
 ```
 
 ## About the Component
@@ -41,7 +41,7 @@ yarn add react-scrollspy-animated
 - Add `ScrollSpy` component to your navigation. You need to add `ref={createRef()}` to each navigation item that you want to works with ScrollSpy.
 
 ```jsx
-import ScrollSpy from 'react-scroll-spy-animated';
+import ScrollSpy from 'react-scrollspy-navigation';
 ```
 
 ```jsx

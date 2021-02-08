@@ -1,5 +1,5 @@
 {
-  "name": "react-scrollspy-animated",
+  "name": "react-scrollspy-navigation",
   "version": "1.0.0",
   "description": "Scrollspy React Component - Automatically update navigation components based on scroll position to indicate which link is currently active in the viewport.",
   "browser": "ScrollSpy.jsx",
