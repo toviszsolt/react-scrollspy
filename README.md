@@ -20,10 +20,10 @@ yarn add react-scrollspy-animated
 
 ## About the Component
 
-- **It work as a real react component with `Refs`**
+- **It works as a real react component with `Refs`**
 - It works with **nested components** (standard `forwardRef` components)
-- It work on window scrolling (**scrollable boxes not supported yet**)
-- It work with **vertical and horizontal** scrolling also
+- It works on window scrolling (**scrollable boxes not supported yet**)
+- It works with **vertical and horizontal** scrolling also
 
 ## How to use it
 
