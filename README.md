@@ -1,7 +1,5 @@
 ## ![Poster](https://repository-images.githubusercontent.com/336935487/e0708600-6af3-11eb-8e89-142c76406aef)
 
----
-
 # React Scrollspy Component
 
 **react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click on a navigation component.
