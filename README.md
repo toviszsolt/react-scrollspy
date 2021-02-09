@@ -1,3 +1,7 @@
+## ![Poster](https://repository-images.githubusercontent.com/336935487/e0708600-6af3-11eb-8e89-142c76406aef)
+
+---
+
 # React Scrollspy Component
 
 **react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click on a navigation component.
@@ -47,13 +51,13 @@ import ScrollSpy from 'react-scrollspy-navigation';
 ```jsx
 // Last item won't use as ScrollSpy item, but you can place there
 <ScrollSpy>
-  <a href="#box-1" ref={createRef()}>
+  <a href="#box-1" ref={React.createRef()}>
     ...
   </a>
-  <a href="#box-2" ref={createRef()}>
+  <a href="#box-2" ref={React.createRef()}>
     ...
   </a>
-  <a href="#box-3" ref={createRef()}>
+  <a href="#box-3" ref={React.createRef()}>
     ...
   </a>
   <a href="/home">...</a>
@@ -64,7 +68,7 @@ import ScrollSpy from 'react-scrollspy-navigation';
 
 ```jsx
 // FancyButton component
-const FancyButton = forwardRef(({ href, text }, ref) => (
+const FancyButton = React.forwardRef(({ href, text }, ref) => (
   <a ref={ref} href={href} className="FancyButton">
     {text}
   </a>
@@ -74,9 +78,9 @@ const FancyButton = forwardRef(({ href, text }, ref) => (
 ```jsx
 // ScrollSpy initialization
 <ScrollSpy>
-  <FancyButton link="#box-1" text="Box 1" ref={createRef()} />
-  <FancyButton link="#box-2" text="Box 2" ref={createRef()} />
-  <FancyButton link="#box-3" text="Box 3" ref={createRef()} />
+  <FancyButton link="#box-1" text="Box 1" ref={React.createRef()} />
+  <FancyButton link="#box-2" text="Box 2" ref={React.createRef()} />
+  <FancyButton link="#box-3" text="Box 3" ref={React.createRef()} />
 </ScrollSpy>
 ```
 
