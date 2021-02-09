@@ -1,8 +1,8 @@
 {
   "name": "react-scrollspy-navigation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scrollspy React Component - Automatically update navigation components based on scroll position to indicate which link is currently active in the viewport.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -35,5 +35,17 @@
   "bugs": {
     "url": "https://github.com/toviszsolt/react-scrollspy/issues"
   },
-  "homepage": "https://mvzn2.csb.app/"
+  "homepage": "https://mvzn2.csb.app/",
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13"
+  }
 }
