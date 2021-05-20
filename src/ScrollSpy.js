@@ -11,6 +11,15 @@ const ScrollSpy = ({
   useEffect(() => {
     const sourceElements = [];
     const targetElements = [];
+
+    const listTitleElements = [];
+    const listSourceTitleElements = [];
+
+    const listTargetElements = [];
+    const listSourceElements = [];
+
+    const childrenElements = Array.isArray(children) ? children : [children];
+
     let pendingScroll;
 
     const throttle = (fn, wait = 100) => {
@@ -37,8 +46,11 @@ const ScrollSpy = ({
         y: scrollElement.scrollTop + window.innerHeight / 2,
       };
 
-      sourceElements.map((source, i) => {
-        const target = targetElements[i];
+      const mergedSourced = [...sourceElements, ...listSourceTitleElements, ...listSourceElements];
+      const mergedElements = [...targetElements, ...listTitleElements, ...listTargetElements];
+
+      mergedSourced.map((source, i) => {
+        const target = mergedElements[i];
 
         const visibleHorizontal =
           target.offsetLeft >= 0 &&
@@ -113,13 +125,8 @@ const ScrollSpy = ({
       return tick(scrollToPosition);
     };
 
-    children.map((el) => {
-      const href = el.props && el.props.href;
-      const self = el.ref && el.ref.current;
-
-      if (!self || !href || href.charAt(0) !== '#') {
-        return false;
-      }
+    const createArrays = (e, href, firstArr, secondArr) => {
+      const self = e.ref && e.ref.current;
 
       const targetElement = href === '#' ? document.body : document.querySelector(href);
 
@@ -133,14 +140,29 @@ const ScrollSpy = ({
             // eslint-disable-next-line comma-dangle
             duration
           );
-        targetElements.push(targetElement);
-        sourceElements.push(self);
+        firstArr.push(targetElement);
+        secondArr.push(self);
+      }
+    };
+
+    childrenElements.map((el) => {
+      const { props } = el;
+      const href = props && props.href;
+
+      if (props.scrollSpyList === undefined) {
+        createArrays(el, href, targetElements, sourceElements);
+      } else {
+        createArrays(el, href, listTitleElements, listSourceTitleElements);
+
+        props.scrollSpyList.forEach((e) =>
+          createArrays(e, e.href, listTargetElements, listSourceElements)
+        );
       }
 
       return true;
     });
 
-    if (targetElements.length) {
+    if (targetElements.length || listTargetElements.length) {
       const ScrollEvent = new Event('scroll');
       window.addEventListener('scroll', onScrollHandler, { passive: true });
       window.dispatchEvent(ScrollEvent);
