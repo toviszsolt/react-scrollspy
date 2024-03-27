@@ -12,6 +12,11 @@ const _ = () => {
       root={document.getElementById('root')}
       rootMargin="-60px 0px 0px 0px"
       threshold={0}
+      onClickEach={(e, next, container) => {
+        console.log('The clicked element:', e.target);
+        console.log('The container element of target:', container);
+        next();
+      }}
     >
       <div>bruh</div>
     </ScrollSpy>

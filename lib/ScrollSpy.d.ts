@@ -65,11 +65,7 @@ declare function ScrollSpy(props: {
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 
     /** Function that will be called internally */
-    clickHandler: (
-      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-      handler: () => void,
-      container: HTMLElement,
-    ) => void,
+    clickHandler: () => void,
 
     /** Container element that is being scrolled */
     container: HTMLElement,
