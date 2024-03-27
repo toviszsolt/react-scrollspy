@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollSpy from '../lib/ScrollSpy';
+import ScrollSpy from 'react-scrollspy-navigation';
 
 const _ = () => {
   return (
