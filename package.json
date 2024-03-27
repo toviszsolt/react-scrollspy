@@ -2,14 +2,6 @@
   "name": "react-scrollspy-navigation",
   "version": "1.0.3",
   "description": "Scrollspy React Component - Automatically update navigation components based on scroll position to indicate which link is currently active in the viewport.",
-  "main": "dist/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/toviszsolt/react-scrollspy.git"
-  },
   "keywords": [
     "react-scrollspy",
     "react-navigation",
@@ -25,23 +17,64 @@
     "react",
     "reactjs"
   ],
-  "author": "Zsolt Tovis <tovis.zsolt@gmail.com> (https://toviszsolt.github.io/)",
-  "funding": "https://paypal.me/toviszsolt",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "module": "./dist/react-scrollspy.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-scrollspy.js",
+      "require": "./dist/react-scrollspy.cjs",
+      "types": "./dist/react-scrollspy.d.ts"
+    }
+  },
   "license": "MIT",
+  "author": {
+    "name": "Zsolt Tovis",
+    "email": "tovis.zsolt@gmail.com",
+    "url": "https://toviszsolt.github.io/"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/toviszsolt"
+    },
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/paypalme/toviszsolt"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toviszsolt/react-scrollspy.git"
+  },
   "bugs": {
     "url": "https://github.com/toviszsolt/react-scrollspy/issues"
   },
   "homepage": "https://mvzn2.csb.app/",
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files"
+    "dev": "vite",
+    "build": "vite build && node post-build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "files": [
-    "dist/*"
-  ],
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/preset-react": "^7.12.13"
+    "@nextcss/nextcss": "^0.4.3",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "vite": "^5.2.0",
+    "vite-plugin-static-copy": "^1.0.2"
   }
 }
