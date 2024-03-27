@@ -2682,10 +2682,10 @@ react-router@6.22.3:
   dependencies:
     "@remix-run/router" "1.15.3"
 
-react-scrollspy-navigation@^2.0.1-pre:
-  version "2.0.1-pre"
-  resolved "https://registry.yarnpkg.com/react-scrollspy-navigation/-/react-scrollspy-navigation-2.0.1-pre.tgz#21b4de63213d55e03e78b4f818077dd18c5e56ef"
-  integrity sha512-fZRdOmoRRewrpRQfi97unWhmt7bWuXz4zTR+uOwtE+wWbMz0YlXjH073Az8aJZ4g67mnaNRbiw/8/p2FVQ4Z8Q==
+react-scrollspy-navigation@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-scrollspy-navigation/-/react-scrollspy-navigation-2.0.0.tgz#feb89dffbce7e751be7fcddf007e6f81c3685bb5"
+  integrity sha512-7VHXN+w07nR04S55UJNjuOEt4ZLgCErKoOsxzrrfjmXnWliU7JlZP6b0WiE8G1VRBbwYV2r2ka4vh0smks059A==
 
 react@^18.2.0:
   version "18.2.0"

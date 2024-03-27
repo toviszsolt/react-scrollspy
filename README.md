@@ -3,7 +3,7 @@
 # React Scrollspy Component
 
 [![GitHub License](https://img.shields.io/github/license/toviszsolt/react-scrollspy?style=flat)](https://github.com/toviszsolt/react-scrollspy/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/v/react-scrollspy?style=flat&color=red)](https://www.npmjs.com/package/react-scrollspy-navigation)
+[![npm](https://img.shields.io/npm/v/react-scrollspy-navigation?style=flat&color=red)](https://www.npmjs.com/package/react-scrollspy-navigation)
 [![GitHub Repo stars](https://img.shields.io/github/stars/toviszsolt/react-scrollspy?color=DAAA3F)](https://github.com/toviszsolt/react-scrollspy/stargazers)
 [![Run tests](https://github.com/toviszsolt/react-scrollspy/actions/workflows/main.yml/badge.svg)](https://github.com/toviszsolt/react-scrollspy/actions/workflows/main.yml)
 [![NPM Downloads](https://img.shields.io/npm/dw/react-scrollspy-navigation?style=flat)](https://www.npmjs.com/package/react-scrollspy-navigation)
