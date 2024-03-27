@@ -1,8 +1,10 @@
-## ![Poster](https://repository-images.githubusercontent.com/336935487/e0708600-6af3-11eb-8e89-142c76406aef)
+## ![Poster](assets/poster.png)
 
 # React Scrollspy Component
 
-**react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click on a navigation component.
+**react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll
+position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click
+on a navigation component.
 
 **[Demo with example code](https://mvzn2.csb.app/)**
 
@@ -40,7 +42,8 @@ yarn add react-scrollspy-navigation
 </App>
 ```
 
-- Add `ScrollSpy` component to your navigation. You need to add `ref={createRef()}` to each navigation item that you want to works with ScrollSpy.
+- Add `ScrollSpy` component to your navigation. You need to add `ref={createRef()}` to each navigation item that you
+  want to works with ScrollSpy.
 
 ```jsx
 import ScrollSpy from 'react-scrollspy-navigation';
@@ -87,8 +90,12 @@ const FancyButton = React.forwardRef(({ href, text }, ref) => (
 Available `ScrollSpy` component properties
 
 - `className` - class name of active item (default: `active`)
-- `offsetTop` - if you are using `fixed` or `sticky` navigation bar, the **vertical scroll position** can be adjusting when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default: `0`, unit: `px`)
-- `offsetLeft` - if you are using `fixed` or `sticky` navigation bar, the **horizontal scroll position** can be adjusting when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default: `0`, unit: `px`)
+- `offsetTop` - if you are using `fixed` or `sticky` navigation bar, the **vertical scroll position** can be adjusting
+  when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default: `0`, unit:
+  `px`)
+- `offsetLeft` - if you are using `fixed` or `sticky` navigation bar, the **horizontal scroll position** can be
+  adjusting when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default:
+  `0`, unit: `px`)
 - `duration` - the scroll animation duration, when you click on a navigation item (default: `1000`, unit: `ms`)
 
 ## Sponsorship
