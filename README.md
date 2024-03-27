@@ -31,81 +31,118 @@ npm i react-scrollspy-navigation
 yarn add react-scrollspy-navigation
 ```
 
-## About the Component
-
-- **It works as a real react component with `Refs`**
-- It works with **nested components** (standard `forwardRef` components)
-- It works on window scrolling (**scrollable boxes not supported yet**)
-- It works with **vertical and horizontal** scrolling also
-
 ## How to use it
 
-- Add unique `id` to content blocks.
+Add custom `id` to content blocks or heading tags for the elements you want to spy on. There is nothing more to do with
+the content elements. It's awfully simple so far, right?
 
 ```jsx
-<App>
-  <Navigation />
-  <Section id="box-1">Content here</Section>
-  <Section id="box-2">Content here</Section>
-  <Section id="box-3">Content here</Section>
-</App>
+// Content blocks
+conat ContentWithBoxes = () => {
+  return (
+    <>
+      <section id="target-1">Content here</section>
+      <section id="target-2">Content here</section>
+      <section id="target-3">Content here</section>
+    </>
+)};
+
+// Heading tags
+conat ContentWithHeaders = () => {
+  return (
+    <>
+      <section>
+        <h2 id="target-1">Target 1</h2>
+      </section>
+      <section>
+        <h2 id="target-2">Target 2</h2>
+      </section>
+      <section>
+        <h2 id="target-3">Target 3</h2>
+      </section>
+    </>
+)};
 ```
 
-- Add `ScrollSpy` component to your navigation. You need to add `ref={createRef()}` to each navigation item that you
-  want to works with ScrollSpy.
+Wrap your navigation structure with `ScrollSpy` component. Use only `a` tags whose `href` attribute is the hash link of
+the `id` of an existing content element. You can use structures of any complexity or depth in the `ScrollSpy` component,
+and you can nest multiple `ScrollSpy` components (although this works, it is not recommended). Don't worry, `ScrollSpy`
+won't add any additional structures to the child component.
+
+> #### Note:
+>
+> If you've come across url hashes before, you can find some information here:
+> https://en.wikipedia.org/wiki/URI_fragment
 
 ```jsx
 import ScrollSpy from 'react-scrollspy-navigation';
 ```
 
 ```jsx
-// Last item won't use as ScrollSpy item, but you can place there
-<ScrollSpy>
-  <a href="#box-1" ref={React.createRef()}>
-    ...
-  </a>
-  <a href="#box-2" ref={React.createRef()}>
-    ...
-  </a>
-  <a href="#box-3" ref={React.createRef()}>
-    ...
-  </a>
-  <a href="/home">...</a>
-</ScrollSpy>
+// Last item won't use as ScrollSpy item, but you can place there.
+// Obviously, non hash links will not be processed.
+const Navigation = () => {
+  return (
+    <ScrollSpy activeClass="nav-active">
+      <nav>
+        <ul>
+          <li>
+            <a href="#target-1">...</a>
+          </li>
+          <li>
+            <a href="#target-2">...</a>
+          </li>
+          <li>
+            <a href="#target-3">...</a>
+          </li>
+        </ul>
+      </nav>
+    </ScrollSpy>
+  );
+};
 ```
 
-- You can use nested components, but wrapper component(s) need to use `forwardRefs`.
+Don't forget to specify in the `activeClass` prop what className to add to the currently active link. Congratulations,
+we are done, it was that simple. Continue reading the documentation to find out what options are available to configure
+how `ScrollSpy` works.
 
-```jsx
-// FancyButton component
-const FancyButton = React.forwardRef(({ href, text }, ref) => (
-  <a ref={ref} href={href} className="FancyButton">
-    {text}
-  </a>
-));
-```
-
-```jsx
-// ScrollSpy initialization
-<ScrollSpy>
-  <FancyButton link="#box-1" text="Box 1" ref={React.createRef()} />
-  <FancyButton link="#box-2" text="Box 2" ref={React.createRef()} />
-  <FancyButton link="#box-3" text="Box 3" ref={React.createRef()} />
-</ScrollSpy>
-```
+> #### Note:
+>
+> The much loved `Refs` used in the previous version and React were thrown away.
 
 ## Configuration
 
 Available `ScrollSpy` component properties
 
-- `className` - class name of active item (default: `active`)
-- `offsetTop` - if you are using `fixed` or `sticky` navigation bar, the **vertical scroll position** can be adjusting
-  when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default: `0`, unit:
-  `px`)
-- `offsetLeft` - if you are using `fixed` or `sticky` navigation bar, the **horizontal scroll position** can be
-  adjusting when you click on the navigation item. Value can be `integer` (`positive`, `negative` or `zero`). (default:
-  `0`, unit: `px`)
-- `duration` - the scroll animation duration, when you click on a navigation item (default: `1000`, unit: `ms`)
+| Prop        | Type                                       | Default                   | Description                                                                                                                                                                                                                |
+| ----------- | ------------------------------------------ | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| activeClass | `string`                                   | empty sting               | Class name to be applied to the active link                                                                                                                                                                                |
+| activeAttr  | `boolean`                                  | `false`                   | If true, the active link will have an attribute `data-active` attached to it.                                                                                                                                              |
+| offsetTop   | `number`                                   | `false`                   | Offset in pixels from the top of the element to trigger the active link                                                                                                                                                    |
+| offsetLeft  | `number`                                   | `false`                   | Offset in pixels from the left of the element to trigger the active link                                                                                                                                                   |
+| behavior    | `'smooth' \| 'instant' \| 'auto' \| false` | `smooth`                  | Behavior of the scroll animation. See: [Element: scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo#options)                                                                                    |
+| root        | `HTMLElement \| null \| false`             | `null`                    | Element to be observed. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options)                                            |
+| rootMargin  | `string`                                   | `null`                    | Margin around the element to be. Element to be observed. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options) observed. |
+| threshold   | `number \| number[] \| false`              | `[0, 0.25, 0.5, 0.75, 1]` | Thresholds for the intersection. Element to be observed. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options) observer. |
+| onClickEach | `function`                                 | `false`                   | Callback fired when an element is clicked.                                                                                                                                                                                 |
+
+## Compatibility
+
+A component depends on the following functions or classes, which define its compatibility.
+
+- Scroll methods on elements (scroll, scrollTo, scrollBy):
+  [supported browsers](https://caniuse.com/element-scroll-methods)
+- IntersectionObserver API: [supported browsers](https://caniuse.com/mdn-api_intersectionobserver)
+
+## Example code
+
+Check out the interactive demo and example codes.
+
+**[Demo with example code](https://mvzn2.csb.app/)**
+
+**[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
+
+**[Sponsor me on PayPal](https://paypal.me/toviszsolt)**
 
 ## Guidelines
 
