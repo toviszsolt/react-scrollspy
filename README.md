@@ -1,3 +1,10 @@
+[![GitHub License](https://img.shields.io/github/license/toviszsolt/react-scrollspy?style=flat)](https://github.com/toviszsolt/react-scrollspy/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/react-scrollspy?style=flat&color=red)](https://www.npmjs.com/package/react-scrollspy-navigation)
+[![GitHub Repo stars](https://img.shields.io/github/stars/toviszsolt/react-scrollspy?color=DAAA3F)](https://github.com/toviszsolt/react-scrollspy/stargazers)
+[![Run tests](https://github.com/toviszsolt/react-scrollspy/actions/workflows/main.yml/badge.svg)](https://github.com/toviszsolt/react-scrollspy/actions/workflows/main.yml)
+[![NPM Downloads](https://img.shields.io/npm/dw/react-scrollspy-navigation?style=flat)](https://www.npmjs.com/package/react-scrollspy-navigation)
+[![Sponsor](https://img.shields.io/static/v1?label=sponsor&message=❤&color=ff69b4)](https://github.com/sponsors/toviszsolt)
+
 ## ![Poster](assets/poster.png)
 
 # React Scrollspy Component
@@ -8,15 +15,17 @@ on a navigation component.
 
 **[Demo with example code](https://mvzn2.csb.app/)**
 
+**[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
+
+**[Sponsor me on PayPal](https://paypal.me/toviszsolt)**
+
 ## How to install
 
-Install via NPM package manager
+Install via NPM or Yarn package manager
 
 ```
 npm i react-scrollspy-navigation
 ```
-
-Install via Yarn package manager
 
 ```
 yarn add react-scrollspy-navigation
@@ -98,10 +107,16 @@ Available `ScrollSpy` component properties
   `0`, unit: `px`)
 - `duration` - the scroll animation duration, when you click on a navigation item (default: `1000`, unit: `ms`)
 
-## Sponsorship
+## Guidelines
 
-I will happy if you can donate/sponsor me via PayPal.Me. **[Donate Me](https://paypal.me/toviszsolt)**
+To learn about the guidelines, please read the [Code of Conduct](./CODE_OF_CONDUCT.md),
+[Contributing](./CONTRIBUTING.md) and [Security Policy](./SECURITY.md) documents.
 
 ## License
 
-MIT License. Copyright (c) 2021 Zsolt Tovis
+MIT License @ 2021 [Zsolt Tövis](https://github.com/toviszsolt)
+
+If you found this project interesting, please consider supporting my open source work by
+[sponsoring me on GitHub](https://github.com/sponsors/toviszsolt) /
+[sponsoring me on PayPal](https://www.paypal.com/paypalme/toviszsolt) /
+[give the repo a star](https://github.com/toviszsolt/react-scrollspy).
