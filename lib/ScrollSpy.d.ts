@@ -14,14 +14,14 @@ declare function ScrollSpy(props: {
   activeAttr?: boolean;
 
   /**
-   * Offset in pixels from the top of the element to trigger the active link
+   * Offset from top the final scroll position in pixels
    * @uses Element: scrollTo()
    * @default 0
    */
   offsetTop?: number;
 
   /**
-   * Offset in pixels from the left of the element to trigger the active link
+   * Offset from left the final scroll position in pixels
    * @uses Element: scrollTo()
    * @default 0
    */
@@ -36,7 +36,7 @@ declare function ScrollSpy(props: {
   behavior?: 'smooth' | 'instant' | 'auto';
 
   /**
-   * Element to be observed.
+   * Root element to be observed.
    * @uses ntersectionObserver: IntersectionObserver()
    * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options
    * @default null
@@ -44,7 +44,7 @@ declare function ScrollSpy(props: {
   root?: HTMLElement | null;
 
   /**
-   * Margin around the element to be observed.
+   * Root margin for the intersection observer.
    * @uses ntersectionObserver: IntersectionObserver()
    * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options
    * @default '0px 0px 0px 0px'
