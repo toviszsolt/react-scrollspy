@@ -13,7 +13,7 @@
 position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click
 on a navigation component.
 
-**[Demo with example code](https://mvzn2.csb.app/)**
+**[Demo with example code](https://32jhvk.csb.app)**
 
 **[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
 
@@ -159,7 +159,7 @@ A component depends on the following functions or classes, which define its comp
 
 Check out the interactive demo and example codes.
 
-**[Demo with example code](https://mvzn2.csb.app/)**
+**[Demo with example code](https://32jhvk.csb.app)**
 
 **[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
 

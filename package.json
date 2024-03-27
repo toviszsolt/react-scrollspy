@@ -52,7 +52,7 @@
   "bugs": {
     "url": "https://github.com/toviszsolt/react-scrollspy/issues"
   },
-  "homepage": "https://mvzn2.csb.app/",
+  "homepage": "https://32jhvk.csb.app",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node post-build",
