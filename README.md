@@ -18,6 +18,24 @@ currently active in the viewport. It also scrolls (navigation) to viewport when 
 
 **[Sponsor me on PayPal](https://paypal.me/toviszsolt)**
 
+## Table of Contents
+
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [How to install](#how-to-install)
+- [How to use it](#how-to-use-it)
+  - [Step 1: Content](#step-1-content)
+  - [Step 2: Navigation](#step-2-navigation)
+- [Configuration](#configuration)
+  - [Optional `ScrollSpy` props](#optional-scrollspy-props)
+  - [`onClickEach(event, internalClickHandler, container)`](#onclickeachevent-internalclickhandler-container)
+- [Compatibility](#compatibility)
+- [Example code](#example-code)
+- [Guidelines](#guidelines)
+- [License](#license)
+
+<!-- TOC end -->
+
 ## How to install
 
 Install via NPM or Yarn package manager
@@ -108,7 +126,7 @@ _Note: The much loved `Refs` used in the previous version and React were thrown 
 
 ## Configuration
 
-### Available `ScrollSpy` props
+### Optional `ScrollSpy` props
 
 | Prop        | Type                            | Default                 | Description                                                                                                                                                                                         |
 | ----------- | ------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
