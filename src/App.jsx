@@ -17,7 +17,10 @@ const App = () => {
 const Topbar = () => {
   return (
     <div className="px-20 bg-grey-900 fg-grey-300">
-      <div className="container-auto-md h-35 flex align-center justify-center fs-13 fw-600 sx-20">
+      <div
+        className="container-auto-md h-35 flex align-center justify-center fs-13 fw-600 sx-20 overflow-x-auto"
+        style={{ whiteSpace: 'nowrap' }}
+      >
         <h1 className="text-4xl">v2.0 Released</h1>
         <div className="flex-1 flex justify-center align-center sx-20">
           <Link to="/" className="hover:fg-red-300">

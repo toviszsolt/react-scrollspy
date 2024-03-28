@@ -33,8 +33,8 @@ const Sample1 = () => {
 
 const Navbar = () => {
   return (
-    <div className="flex align-center sticky top-0 z-1000 h-60 px-20 bg-white shadow-2">
-      <div className="container-auto-md flex align-center sx-20">
+    <div className="flex align-center sticky top-0 z-1000 px-20 bg-white shadow-2" style={{ whiteSpace: 'nowrap' }}>
+      <div className="container-auto-md flex align-center h-60 sx-20 overflow-x-auto">
         <h1 className="fs-18 fw-500">ScrollSpy Example</h1>
         <ScrollSpy activeClass="fg-red-500" offsetTop={80} rootMargin="-60px 0px 0px 0px">
           <nav className="flex-1 flex justify-center">
@@ -80,7 +80,7 @@ const Content = () => {
   );
 };
 
-const Section = ({ id, className, children }) => {
+const Section = ({ id = '', className, children }) => {
   const prefix = Math.random().toString(36).slice(7) + '-';
   return (
     <section id={id} className={className}>
@@ -96,7 +96,10 @@ const VerticalScrollContent = ({ idPrefix = '' }) => {
   return (
     <ScrollSpy activeClass="fg-teal-500" offsetLeft={20}>
       <div className="mt-20 bg-grey-100 b-1 b-grey-300">
-        <div className="flex align-center h-45 px-20 sx-20 bb-1 b-grey-300">
+        <div
+          className="flex align-center h-45 px-20 sx-20 bb-1 b-grey-300 overflow-x-auto"
+          style={{ whiteSpace: 'nowrap' }}
+        >
           {Array.from({ length: 5 }, (_, i) => (
             <a key={i} href={`#${idPrefix}sub${i + 1}`} className="fs-14 fw-500 hover:underline">
               Sub-Link {i + 1}

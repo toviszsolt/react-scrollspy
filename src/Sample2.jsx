@@ -24,8 +24,8 @@ const Sample2 = () => {
 
 const Navbar = ({ isColumn, setIsColumn }) => {
   return (
-    <div className="flex align-center sticky top-0 z-1000 h-60 px-20 bg-white/90 shadow-2">
-      <div className="container-auto-md flex align-center sx-20">
+    <div className="flex align-center sticky top-0 z-1000 px-20 bg-white/90 shadow-2">
+      <div className="container-auto-md flex align-center sx-20 h-60 overflow-x-auto" style={{ whiteSpace: 'nowrap' }}>
         <h1 className="fs-18 fw-500">ScrollSpy Example</h1>
         <ScrollSpy activeClass="fg-red-500" rootMargin="-60px 0px 0px 0px">
           <nav className="flex-1 flex justify-center">
