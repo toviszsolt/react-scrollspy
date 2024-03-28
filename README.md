@@ -168,6 +168,7 @@ The component depends on the following functions or classes, which define its co
 - Scroll methods on elements (scroll, scrollTo, scrollBy):
   [supported browsers](https://caniuse.com/element-scroll-methods)
 - IntersectionObserver API: [supported browsers](https://caniuse.com/mdn-api_intersectionobserver)
+- Supported Environments: `ESModules`, `CommonJS`, `TypeScript`
 
 ## Example code
 
