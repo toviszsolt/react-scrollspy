@@ -163,7 +163,7 @@ const Comp = () => {
 
 ## Compatibility
 
-A component depends on the following functions or classes, which define its compatibility.
+The component depends on the following functions or classes, which define its compatibility.
 
 - Scroll methods on elements (scroll, scrollTo, scrollBy):
   [supported browsers](https://caniuse.com/element-scroll-methods)
