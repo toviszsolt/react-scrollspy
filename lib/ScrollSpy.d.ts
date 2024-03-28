@@ -14,14 +14,14 @@ declare function ScrollSpy(props: {
   activeAttr?: boolean;
 
   /**
-   * Offset from top the final scroll position in pixels
+   * Offset the final scroll position from top in pixels
    * @uses Element: scrollTo()
    * @default 0
    */
   offsetTop?: number;
 
   /**
-   * Offset from left the final scroll position in pixels
+   * Offset the final scroll position from left in pixels
    * @uses Element: scrollTo()
    * @default 0
    */
@@ -36,8 +36,8 @@ declare function ScrollSpy(props: {
   behavior?: 'smooth' | 'instant' | 'auto';
 
   /**
-   * Root element to be observed.
-   * @uses ntersectionObserver: IntersectionObserver()
+   * Root element for the intersection observer.
+   * @uses IntersectionObserver: IntersectionObserver()
    * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options
    * @default null
    */
@@ -45,7 +45,7 @@ declare function ScrollSpy(props: {
 
   /**
    * Root margin for the intersection observer.
-   * @uses ntersectionObserver: IntersectionObserver()
+   * @uses IntersectionObserver: IntersectionObserver()
    * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options
    * @default '0px 0px 0px 0px'
    */
@@ -53,19 +53,19 @@ declare function ScrollSpy(props: {
 
   /**
    * Thresholds for the intersection observer.
-   * @uses ntersectionObserver: IntersectionObserver()
+   * @uses IntersectionObserver: IntersectionObserver()
    * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options
    * @default [0, 0.25, 0.5, 0.75, 1]
    */
   threshold?: number | number[];
 
-  /** Callback fired when an element is clicked. */
+  /** Callback function for handle the click event */
   onClickEach?: (
-    /** Cliick event */
+    /** The original click event */
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 
-    /** Function that will be called internally */
-    clickHandler: () => void,
+    /** The internal function that scrolls to the element */
+    internalClickHandler: () => void,
 
     /** Container element that is being scrolled */
     container: HTMLElement,
