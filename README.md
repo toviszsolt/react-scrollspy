@@ -73,17 +73,13 @@ the `id` of an existing content element. You can use structures of any complexit
 and you can nest multiple `ScrollSpy` components (although this works, it is not recommended). Don't worry, `ScrollSpy`
 won't add any additional structures to the child component.
 
-> #### Note:
->
-> If you are new to url hashes, here is some information: https://en.wikipedia.org/wiki/URI_fragment
+_Note: If you are new to url hashes, here is some information: https://en.wikipedia.org/wiki/URI_fragment_
 
 ```jsx
 import ScrollSpy from 'react-scrollspy-navigation';
 ```
 
 ```jsx
-// Last item won't use as ScrollSpy item, but you can place there.
-// Obviously, non hash links will not be processed.
 const Navigation = () => {
   return (
     <ScrollSpy activeClass="nav-active">
@@ -109,9 +105,7 @@ Don't forget to specify in the `activeClass` prop what className to add to the c
 we are done, it was that simple. Continue reading the documentation to find out what options are available to configure
 how `ScrollSpy` works.
 
-> #### Note:
->
-> The much loved `Refs` used in the previous version and React were thrown away.
+_Note: The much loved `Refs` used in the previous version and React were thrown away._
 
 ## Configuration
 
@@ -143,7 +137,6 @@ const Comp = () => {
   const onClickEach = (e, next, container) => {
     console.log('The clicked element:', e.target);
     console.log('The container element of target:', container);
-    // You can do something here if you want.
     next();
   };
 
