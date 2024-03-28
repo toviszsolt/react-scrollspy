@@ -153,7 +153,7 @@ Example:
 const Comp = () => {
   const onClickEach = (e, next, container) => {
     console.log('The clicked element:', e.target);
-    console.log('The container element of target:', container);
+    console.log('The target container element:', container);
     next();
   };
 
