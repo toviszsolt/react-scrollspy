@@ -14,7 +14,7 @@ currently active in the viewport. It also scrolls (navigation) to viewport when 
 
 **[Demo with example code](https://32jhvk.csb.app)**
 
-**[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
+**[Sponsor me on GitHub](https://github.com/sponsors/toviszsolt)**
 
 **[Sponsor me on PayPal](https://paypal.me/toviszsolt)**
 
@@ -72,7 +72,7 @@ the `id` of an existing content element. You can use structures of any complexit
 and you can nest multiple `ScrollSpy` components (although this works, it is not recommended). Don't worry, `ScrollSpy`
 won't add any additional structures to the child component.
 
-_Note: If you are new to url hashes, here is some information: https://en.wikipedia.org/wiki/URI_fragment_
+_Note: If you are new to URL hashes, here is some information: https://en.wikipedia.org/wiki/URI_fragment_
 
 ```jsx
 import ScrollSpy from 'react-scrollspy-navigation';
@@ -157,7 +157,7 @@ Check out the interactive demo and example codes.
 
 **[Demo with example code](https://32jhvk.csb.app)**
 
-**[Sponsor me on Github](https://github.com/sponsors/toviszsolt)**
+**[Sponsor me on GitHub](https://github.com/sponsors/toviszsolt)**
 
 **[Sponsor me on PayPal](https://paypal.me/toviszsolt)**
 
