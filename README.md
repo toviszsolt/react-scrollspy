@@ -1,6 +1,6 @@
 ![Poster](assets/poster.png)
 
-# React Scrollspy Component
+# ScrollSpy React Component
 
 [![GitHub License](https://img.shields.io/github/license/toviszsolt/react-scrollspy?style=flat)](https://github.com/toviszsolt/react-scrollspy/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/react-scrollspy-navigation?style=flat&color=red)](https://www.npmjs.com/package/react-scrollspy-navigation)
@@ -9,9 +9,8 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/react-scrollspy-navigation?style=flat)](https://www.npmjs.com/package/react-scrollspy-navigation)
 [![Sponsor](https://img.shields.io/static/v1?label=sponsor&message=❤&color=ff69b4)](https://github.com/sponsors/toviszsolt)
 
-**react-scrollspy-navigation** is a React Component, that automatically update navigation components based on scroll
-position to indicate which link is currently active in the viewport. It also scrolls (navigation) to viewport when click
-on a navigation component.
+React Component, that automatically update navigation components based on scroll position to indicate which link is
+currently active in the viewport. It also scrolls (navigation) to viewport when click on a navigation component.
 
 **[Demo with example code](https://32jhvk.csb.app)**
 
