@@ -33,6 +33,8 @@ yarn add react-scrollspy-navigation
 
 ## How to use it
 
+### Step 1: Content
+
 Add a unique `id` to content blocks or heading tags for the elements you want to spy on. There is nothing more to do
 with the content elements. It's awfully simple so far, right?
 
@@ -63,6 +65,8 @@ conat ContentWithHeaders = () => {
     </>
 )};
 ```
+
+### Step 2: Navigation
 
 Wrap your navigation structure with `ScrollSpy` component. Use only `a` tags whose `href` attribute is the hash link of
 the `id` of an existing content element. You can use structures of any complexity or depth in the `ScrollSpy` component,
@@ -125,7 +129,7 @@ how `ScrollSpy` works.
 | threshold   | number \| number[]              | [0, 0.25, 0.5, 0.75, 1] | Thresholds for the intersection. Element to be observed. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options) observer. |
 | onClickEach | function                        | undefined               | Callback function for handle the click event                                                                                                                                                                               |
 
-### Parameters for using the `onClickEach(event, internalClickHandler, container)` function.
+### `onClickEach(event, internalClickHandler, container)`
 
 - `event`: The original click event
 - `internalClickHandler`: The internal function that scrolls to the element. This should be called at the end of the
