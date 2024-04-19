@@ -30,7 +30,7 @@ const useScrollObserver = ({ root, rootMargin, threshold }) => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [idsRef, root, rootMargin, threshold]);
 
   return { idsRef, activeLink };
 };
