@@ -29,6 +29,7 @@ currently active in the viewport. It also scrolls (navigation) to viewport when 
 - [Configuration](#configuration)
   - [Optional `ScrollSpy` props](#optional-scrollspy-props)
   - [`onClickEach(event, internalClickHandler, container)`](#onclickeachevent-internalclickhandler-container)
+  - [`onChangeActiveId(currentId, prevId)`](#onchangeactiveidcurrentid-previd)
 - [Compatibility](#compatibility)
 - [Example code](#example-code)
 - [Guidelines](#guidelines)
@@ -162,7 +163,7 @@ const Comp = () => {
 };
 ```
 
-## `onChangeActiveId(currentId, prevId)`
+### `onChangeActiveId(currentId, prevId)`
 
 - `currentId`: The id of the active element
 - `prevId`: The id of previous active element
