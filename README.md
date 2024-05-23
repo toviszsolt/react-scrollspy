@@ -176,7 +176,7 @@ const Comp = () => {
     console.log({ current, prev });
   };
 
-  return <ScrollSpy onChangeActiveId={onClickEach}>...</ScrollSpy>;
+  return <ScrollSpy onChangeActiveId={onChangeActiveId}>...</ScrollSpy>;
 };
 ```
 
