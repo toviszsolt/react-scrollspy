@@ -128,17 +128,18 @@ _Note: The much loved `Refs` used in the previous version and React were thrown 
 
 ### Optional `ScrollSpy` props
 
-| Prop        | Type                            | Default                 | Description                                                                                                                                                                                         |
-| ----------- | ------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| activeClass | string                          | ''                      | Class name(s) to be applied to the active link                                                                                                                                                      |
-| activeAttr  | boolean                         | false                   | If true, the active link will have an attribute `data-active` attached to it.                                                                                                                       |
-| offsetTop   | number                          | 0                       | Offset the final scroll position from top in pixels.                                                                                                                                                |
-| offsetLeft  | number                          | 0                       | Offset the final scroll position from left in pixels.                                                                                                                                               |
-| behavior    | 'smooth' \| 'instant' \| 'auto' | 'smooth'                | Behavior of the scroll animation. See: [Element: scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo#options)                                                             |
-| root        | HTMLElement \| null             | null                    | Root element for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options) |
-| rootMargin  | string                          | '0px'                   | Root margin for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options)  |
-| threshold   | number \| number[]              | [0, 0.25, 0.5, 0.75, 1] | Thresholds for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options)   |
-| onClickEach | function                        | undefined               | Callback function for handle the click event                                                                                                                                                        |
+| Prop             | Type                            | Default                 | Description                                                                                                                                                                                         |
+| ---------------- | ------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| activeClass      | string                          | ''                      | Class name(s) to be applied to the active link                                                                                                                                                      |
+| activeAttr       | boolean                         | false                   | If true, the active link will have an attribute `data-active` attached to it.                                                                                                                       |
+| offsetTop        | number                          | 0                       | Offset the final scroll position from top in pixels.                                                                                                                                                |
+| offsetLeft       | number                          | 0                       | Offset the final scroll position from left in pixels.                                                                                                                                               |
+| behavior         | 'smooth' \| 'instant' \| 'auto' | 'smooth'                | Behavior of the scroll animation. See: [Element: scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo#options)                                                             |
+| root             | HTMLElement \| null             | null                    | Root element for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options) |
+| rootMargin       | string                          | '0px'                   | Root margin for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options)  |
+| threshold        | number \| number[]              | [0, 0.25, 0.5, 0.75, 1] | Thresholds for the intersection observer. See: [IntersectionObserver: IntersectionObserver()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#options)   |
+| onClickEach      | function                        | undefined               | Callback function for handle the click event                                                                                                                                                        |
+| onChangeActiveId | function                        | undefined               | Callback function for handle the active element change event                                                                                                                                        |
 
 ### `onClickEach(event, internalClickHandler, container)`
 
@@ -158,6 +159,24 @@ const Comp = () => {
   };
 
   return <ScrollSpy onClickEach={onClickEach}>...</ScrollSpy>;
+};
+```
+
+## `onChangeActiveId(currentId, prevId)`
+
+- `currentId`: The id of the active element
+- `prevId`: The id of previous active element
+
+Example:
+
+```jsx
+const Comp = () => {
+  const onChangeActiveId = (current, prev) => {
+    console.log('Active element changed');
+    console.log({ current, prev });
+  };
+
+  return <ScrollSpy onChangeActiveId={onClickEach}>...</ScrollSpy>;
 };
 ```
 

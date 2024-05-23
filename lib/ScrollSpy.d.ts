@@ -70,6 +70,16 @@ declare function ScrollSpy(props: {
     /** Container element that is being scrolled */
     container: HTMLElement,
   ) => void;
+
+  /** Callback function for handle the active element change event */
+  onChangeActiveId?(
+    /** The id of the active element */
+    currentId: string | null,
+
+    /** The id of previous active element */
+    prevId: string | null,
+  ): void;
+
   children?: React.ReactNode;
 }): JSX.Element;
 

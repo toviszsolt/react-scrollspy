@@ -12,9 +12,10 @@ const ScrollSpy = ({
   rootMargin = '0px',
   threshold = [0, 0.25, 0.5, 0.75, 1],
   onClickEach = null,
+  onChangeActiveId = null,
   children = null,
 }) => {
-  const { idsRef, activeLink } = useScrollObserver({ root, rootMargin, threshold });
+  const { idsRef, activeLink } = useScrollObserver({ root, rootMargin, threshold, onChangeActiveId });
 
   const modifiedChildren = (children) => {
     return Children.map(children, (child) => {

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from 'react';
 
-const useScrollObserver = ({ root, rootMargin, threshold }) => {
+const useScrollObserver = ({ root, rootMargin, threshold, onChangeActiveId }) => {
   const [activeLink, setActiveLink] = useState(null);
   const idsRef = useRef([]);
 
@@ -17,6 +17,10 @@ const useScrollObserver = ({ root, rootMargin, threshold }) => {
       const entry = idsRef.current.find((el) => el.ratio === maxRatio);
 
       setActiveLink(entry && entry.id);
+
+      if (entry && entry.id && activeLink !== entry.id && typeof onChangeActiveId === 'function') {
+        onChangeActiveId(entry.id, activeLink);
+      }
     };
 
     const optionsObserver = { root, rootMargin, threshold };
