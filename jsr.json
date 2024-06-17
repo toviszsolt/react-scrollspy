@@ -1,8 +1,8 @@
 {
   "name": "@toviszsolt/react-scrollspy",
-  "version": "2.0.6",
+  "version": "2.0.6-jsr-1",
   "exports": "./dist/react-scrollspy.d.ts",
   "publish": {
-    "include": ["LICENSE", "README.md", "./dist/react-scrollspy.js", "./dist/react-scrollspy.d.ts"]
+    "include": ["LICENSE", "README.md", "package.json", "./dist/react-scrollspy.js", "./dist/react-scrollspy.d.ts"]
   }
 }
