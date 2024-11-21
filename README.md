@@ -58,17 +58,18 @@ with the content elements. It's awfully simple so far, right?
 
 ```jsx
 // Content blocks
-conat ContentWithBoxes = () => {
+const ContentWithBoxes = () => {
   return (
     <>
       <section id="target-1">Content here</section>
       <section id="target-2">Content here</section>
       <section id="target-3">Content here</section>
     </>
-)};
+  );
+};
 
 // Heading tags
-conat ContentWithHeaders = () => {
+const ContentWithHeaders = () => {
   return (
     <>
       <section>
@@ -81,7 +82,8 @@ conat ContentWithHeaders = () => {
         <h2 id="target-3">Target 3</h2>
       </section>
     </>
-)};
+  );
+};
 ```
 
 ### Step 2: Navigation
