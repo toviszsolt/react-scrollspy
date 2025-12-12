@@ -26,9 +26,9 @@
   "types": "./dist/react-scrollspy.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/react-scrollspy.d.ts",
       "import": "./dist/react-scrollspy.js",
-      "require": "./dist/react-scrollspy.cjs",
-      "types": "./dist/react-scrollspy.d.ts"
+      "require": "./dist/react-scrollspy.cjs"
     }
   },
   "license": "MIT",
@@ -61,22 +61,21 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@nextcss/nextcss": "^0.4.3",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
+    "@nextcss/nextcss": "^0.9.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^9.5.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
-    "react-scrollspy-navigation": "^2.0.4",
-    "vite": "^5.2.0"
+    "postcss-preset-env": "^10.5.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.10.1",
+    "react-scrollspy-navigation": "^2.0.6",
+    "vite": "^7.2.7"
   }
 }
