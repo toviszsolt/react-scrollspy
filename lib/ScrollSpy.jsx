@@ -15,10 +15,38 @@ const ScrollSpy = ({
   onChangeActiveId = null,
   children = null,
 }) => {
-  const { idsRef, activeLink } = useScrollObserver({ root, rootMargin, threshold, onChangeActiveId });
+  const detectedIds = [];
+
+  const collectIds = (children) => {
+    Children.forEach(children, (child) => {
+      if (!child) return;
+      const { type, props } = child;
+      const { href } = props || {};
+
+      if (type === 'a' && href && href.startsWith('#')) {
+        const id = href.slice(1);
+        if (!detectedIds.includes(id)) {
+          detectedIds.push(id);
+        }
+      }
+      if (props && props.children) {
+        collectIds(props.children);
+      }
+    });
+  };
+  collectIds(children);
+
+  const { activeLink } = useScrollObserver({
+    ids: detectedIds,
+    root,
+    rootMargin,
+    threshold,
+    onChangeActiveId,
+  });
 
   const modifiedChildren = (children) => {
     return Children.map(children, (child) => {
+      if (!child) return child;
       const { type, props } = child;
       const { href, className, onClick: childOnClick } = props || {};
 
@@ -27,10 +55,6 @@ const ScrollSpy = ({
       if (type === 'a' && href && href.startsWith('#')) {
         const id = href.slice(1);
         const isActive = id === activeLink;
-
-        if (!idsRef.current.find((el) => el.id === id)) {
-          idsRef.current.push({ id, ratio: 0 });
-        }
 
         return React.cloneElement(child, {
           className: isActive ? [className, activeClass].join(' ') : className,

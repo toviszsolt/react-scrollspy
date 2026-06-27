@@ -1,42 +1,70 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from 'react';
 
-const useScrollObserver = ({ root, rootMargin, threshold, onChangeActiveId }) => {
+const useScrollObserver = ({
+  ids = [],
+  root = null,
+  rootMargin = '0px',
+  threshold = [0, 0.25, 0.5, 0.75, 1],
+  onChangeActiveId,
+}) => {
   const [activeLink, setActiveLink] = useState(null);
-  const idsRef = useRef([]);
+  const ratiosRef = useRef({});
+  const idsKey = ids.join(',');
+  const thresholdKey = JSON.stringify(threshold);
+
+  const onChangeActiveIdRef = useRef(onChangeActiveId);
+  useEffect(() => {
+    onChangeActiveIdRef.current = onChangeActiveId;
+  }, [onChangeActiveId]);
 
   useEffect(() => {
+    const stableIds = idsKey ? idsKey.split(',') : [];
+    const stableThreshold = JSON.parse(thresholdKey);
+
+    if (stableIds.length === 0) return;
+
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         const id = entry.target.getAttribute('id');
-        const ref = idsRef.current.find((el) => el.id === id);
-        if (ref) ref.ratio = entry.isIntersecting ? entry.intersectionRatio : 0;
+        ratiosRef.current[id] = entry.isIntersecting ? entry.intersectionRatio : 0;
       });
 
-      const maxRatio = Math.max(...idsRef.current.map((el) => el.ratio), 0.1);
-      const entry = idsRef.current.find((el) => el.ratio === maxRatio);
+      let maxRatio = 0.1;
+      let maxId = null;
 
-      setActiveLink(entry && entry.id);
+      stableIds.forEach((id) => {
+        const ratio = ratiosRef.current[id] || 0;
+        if (ratio > maxRatio) {
+          maxRatio = ratio;
+          maxId = id;
+        }
+      });
 
-      if (entry && entry.id && activeLink !== entry.id && typeof onChangeActiveId === 'function') {
-        onChangeActiveId(entry.id, activeLink);
-      }
+      setActiveLink((prevActiveLink) => {
+        if (maxId !== prevActiveLink) {
+          if (maxId && typeof onChangeActiveIdRef.current === 'function') {
+            onChangeActiveIdRef.current(maxId, prevActiveLink);
+          }
+          return maxId;
+        }
+        return prevActiveLink;
+      });
     };
 
-    const optionsObserver = { root, rootMargin, threshold };
+    const optionsObserver = { root, rootMargin, threshold: stableThreshold };
     const observer = new IntersectionObserver(handleIntersection, optionsObserver);
 
-    idsRef.current.forEach(({ id }) => {
+    stableIds.forEach((id) => {
       const content = document.getElementById(id);
-      content && observer.observe(content);
+      if (content) observer.observe(content);
     });
 
     return () => {
       observer.disconnect();
     };
-  }, [idsRef, root, rootMargin, threshold]);
+  }, [idsKey, root, rootMargin, thresholdKey]);
 
-  return { idsRef, activeLink };
+  return { activeLink };
 };
 
 export default useScrollObserver;
