@@ -32,6 +32,10 @@
     }
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "author": {
     "name": "Zsolt Tovis",
     "email": "tovis.zsolt@gmail.com",
