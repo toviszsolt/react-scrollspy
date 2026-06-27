@@ -1,4 +1,4 @@
-import React from 'react';
+import { useId } from 'react';
 import ScrollSpy from '../lib/ScrollSpy';
 import { cn } from '../lib/utils.js';
 
@@ -34,7 +34,7 @@ const Sample1 = () => {
 const Navbar = () => {
   return (
     <div className="flex align-center sticky top-0 z-1000 px-20 bg-white shadow-2" style={{ whiteSpace: 'nowrap' }}>
-      <div className="container-auto-md flex align-center h-60 sx-20 overflow-x-auto">
+      <div className="container-md-auto flex align-center h-60 sx-20 overflow-x-auto">
         <h1 className="fs-18 fw-500">ScrollSpy Example</h1>
         <ScrollSpy activeClass="fg-red-500" offsetTop={80} rootMargin="-60px 0px 0px 0px">
           <nav className="flex-1 flex justify-center">
@@ -81,12 +81,12 @@ const Content = () => {
 };
 
 const Section = ({ id = '', className, children }) => {
-  const prefix = Math.random().toString(36).slice(7) + '-';
+  const reactId = useId();
   return (
     <section id={id} className={className}>
-      <div className="container-auto-md min-h-300 py-20">
+      <div className="container-md-auto min-h-300 py-20">
         {children}
-        <VerticalScrollContent idPrefix={prefix} />
+        <VerticalScrollContent idPrefix={reactId} />
       </div>
     </section>
   );

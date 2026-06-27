@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sample1 from './Sample1';
 import Sample2 from './Sample2';

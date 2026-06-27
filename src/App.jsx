@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import Router from './Router';
 
@@ -18,7 +17,7 @@ const Topbar = () => {
   return (
     <div className="px-20 bg-grey-900 fg-grey-300">
       <div
-        className="container-auto-md h-35 flex align-center justify-center fs-13 fw-600 sx-20 overflow-x-auto"
+        className="container-md-auto h-35 flex align-center justify-center fs-13 fw-600 sx-20 overflow-x-auto"
         style={{ whiteSpace: 'nowrap' }}
       >
         <h1 className="text-4xl">v2.0 Released</h1>
@@ -48,7 +47,7 @@ const Topbar = () => {
 const Footer = () => {
   return (
     <footer className="px-20 min-h-250 px-20 bg-grey-900 fg-grey-300">
-      <div className="container-auto-md p-20 text-center">
+      <div className="container-md-auto p-20 text-center">
         <h3>Footer</h3>
       </div>
     </footer>
