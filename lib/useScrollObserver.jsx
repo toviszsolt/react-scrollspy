@@ -11,8 +11,8 @@ const useScrollObserver = ({
   const ratiosRef = useRef({});
   const idsKey = ids.join(',');
   const thresholdKey = JSON.stringify(threshold);
-
   const onChangeActiveIdRef = useRef(onChangeActiveId);
+
   useEffect(() => {
     onChangeActiveIdRef.current = onChangeActiveId;
   }, [onChangeActiveId]);
@@ -42,7 +42,7 @@ const useScrollObserver = ({
 
       setActiveLink((prevActiveLink) => {
         if (maxId !== prevActiveLink) {
-          if (maxId && typeof onChangeActiveIdRef.current === 'function') {
+          if (typeof onChangeActiveIdRef.current === 'function') {
             onChangeActiveIdRef.current(maxId, prevActiveLink);
           }
           return maxId;
@@ -64,7 +64,7 @@ const useScrollObserver = ({
     };
   }, [idsKey, root, rootMargin, thresholdKey]);
 
-  return { activeLink };
+  return { activeLink: ids.length > 0 ? activeLink : null };
 };
 
 export default useScrollObserver;

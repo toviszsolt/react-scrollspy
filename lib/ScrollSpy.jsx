@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import useScrollObserver from './useScrollObserver.jsx';
-import { findScrollContainer } from './utils.js';
+import { cn, findScrollContainer } from './utils.js';
 
 const ScrollSpy = ({
   activeClass = '',
@@ -34,6 +34,7 @@ const ScrollSpy = ({
       }
     });
   };
+
   collectIds(children);
 
   const { activeLink } = useScrollObserver({
@@ -57,7 +58,7 @@ const ScrollSpy = ({
         const isActive = id === activeLink;
 
         return React.cloneElement(child, {
-          className: isActive ? [className, activeClass].join(' ') : className,
+          className: isActive ? cn(className, activeClass) : className,
           ['data-active']: activeAttr ? isActive : null,
           onClick: (e) => {
             e.preventDefault();
@@ -67,6 +68,7 @@ const ScrollSpy = ({
             }
 
             const content = document.getElementById(id);
+            if (!content) return;
             const container = findScrollContainer(content);
 
             const clickHandlerInternal = () => {
