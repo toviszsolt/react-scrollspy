@@ -39,8 +39,8 @@ jobs:
           cd ..
 
       - name: Upload dist to release
-        uses: softprops/action-gh-release@v1
-        with:
+        uses: softprops/action-gh-release@v3
+          tag_name: ${{ github.ref_name }}
           files: Release.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
