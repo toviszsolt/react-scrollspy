@@ -40,6 +40,7 @@ jobs:
 
       - name: Upload dist to release
         uses: softprops/action-gh-release@v3
+        with:
           tag_name: ${{ github.ref_name }}
           files: Release.zip
         env:
